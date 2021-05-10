@@ -1,0 +1,115 @@
+/* Happy Mother's Day, mom!!!*/
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: #CEF6F5;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    margin: 0;
+    font-family: 'Itim', cursive;
+}
+h1 {
+    text-align: center;
+    font-size 5rem;
+    line-height: 1;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+.score {
+  background:rgba(255,255,255,0.2);
+  padding:0 3rem;
+  line-height:1;
+  border-radius:1rem;
+  color: darkblue;
+}
+p {
+    font-size: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+button {
+    background-color: #ffb3df;
+    width: 120px;
+    height: 50px;
+    font-family: cursive;
+    font-size: 1.75rem;
+    margin-left:45%;
+    margin-right: 45%;
+    margin-bottom: 5px;
+}
+#happy-mothers-day {
+    display: none;
+    width: 20%;
+    height: auto;
+    margin-left: 13%;
+}
+.resetGame {
+    background-color: #0094ff;
+    display: none;
+}
+
+.game {
+  width:600px;
+  height:400px;
+  display:flex;
+  flex-wrap:wrap;
+  margin:0 auto;
+}
+
+.hole {
+  background: url("https://lh3.googleusercontent.com/proxy/sZyzbL4BYmu-bIeIzTi1QnaI9LNWzG7Lz8mDm1m66IMXPP8A6WdZhbzeWV6Vv2wZuda7o7UTFEh1Qb3zUY5ZxZtt") bottom center no-repeat;
+  flex: 1 0 33.33%;
+  background-size: 200px 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mole{
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+.mole1 {
+    background: url("assets/achu.png") bottom center no-repeat;
+    background-size: 80%;
+
+}
+
+.mole2{
+  background: url("assets/brand.png") bottom center no-repeat;
+  background-size: 80%;
+
+}
+
+.mole3{
+  background: url("assets/bri.png") bottom center no-repeat;
+  background-size: 80%;
+
+}
+
+.mole4{
+  background: url("assets/cc.png") bottom center no-repeat;
+  background-size: 80%;
+
+}
+
+.angel{
+  background: url("assets/hn.png") bottom center no-repeat;
+  background-size: 80%;
+
+}
+
+.hole.up .mole {
+    top: 0;
+}

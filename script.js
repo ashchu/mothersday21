@@ -5,13 +5,13 @@ const mole1 = document.querySelector(".mole1");
 const mole2 = document.querySelector(".mole2");
 const mole3 = document.querySelector(".mole3");
 const mole4 = document.querySelector(".mole4");
-const a1 = document.querySelector(".angel");
+const a1 = document.querySelectorAll(".angel");
 let lastHole;
 let timeUp = false;
-let score = 0;
+var score = 0;
 var count = 1;
 var time;
-var angel = false;
+// var angel = false;
 
 function randomTime(min, max) {
     return Math.round(Math.random() * (max-min) + min);
@@ -28,20 +28,11 @@ function randomHole(holes) {
     return hole;
 }
 
-function angelSpeed() {
-  angel = true;
-  score++;
-}
-
 function peep() {
     time = randomTime(300, 1300);
     const hole = randomHole(holes);
     console.log(time, hole);
     hole.classList.add("up");
-    if (angel) {
-      time *= 2;
-      angel = false;
-    }
     setTimeout(() => {
          hole.classList.remove("up");
         if(!timeUp) peep();
@@ -76,8 +67,16 @@ function bonk(e) {
     console.log(e);
 }
 
+function bonka(e) {
+  score = score - 1;
+  console.log("bonka", score)
+  this.classList.remove("up");
+  scoreBoard.textContent = score;
+  console.log(e);
+}
+
 moles.forEach(mole => mole.addEventListener("click", bonk));
-a1.addEventListener("click", angelSpeed);
+a1.forEach(angel => angel.addEventListener("click", bonka));
 mole1.addEventListener("click", bonk);
 mole2.addEventListener("click", bonk);
 mole3.addEventListener("click", bonk);
